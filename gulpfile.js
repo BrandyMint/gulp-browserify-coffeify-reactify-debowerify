@@ -19,13 +19,13 @@ var $ = require('gulp-load-plugins')();
 // https://github.com/deepak1556/gulp-browserify
 // Scripts
 gulp.task('scripts', function () {
-    return gulp.src('app/scripts/app.coffee', { read: false })
+    return gulp.src('app/scripts/main.coffee', { read: false })
         .pipe($.browserify({
             insertGlobals: true,
             extensions: ['.coffee', '.csjx'],
             transform: ['coffeeify', 'reactify']
         }))
-        .pipe($.rename('app.js'))
+        .pipe($.rename('bundle.js'))
         //.pipe($.jshint('.jshintrc'))
         //.pipe($.jshint.reporter('default'))
         .pipe(gulp.dest('dist/scripts'))
