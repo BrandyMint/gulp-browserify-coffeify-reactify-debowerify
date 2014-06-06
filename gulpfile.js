@@ -23,7 +23,7 @@ gulp.task('scripts', function () {
         .pipe($.browserify({
             insertGlobals: true,
             extensions: ['.coffee', '.csjx'],
-            transform: ['coffeeify', 'reactify']
+            transform: ['coffeeify', 'reactify', 'debowerify']
         }))
         .pipe($.rename('bundle.js'))
         //.pipe($.jshint('.jshintrc'))
@@ -47,12 +47,12 @@ gulp.task('scripts', function () {
 var path = require('path');
 gulp.task('less', function () {
   //gulp.src('./app/styles/**/*.less')
-  gulp.src('./app/styles/main.less')
+  gulp.src('./app/stylesheets/main.less')
     .pipe($.less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('dist/stylesheets'))
     .on('error', $.util.log);
 });
 
@@ -144,7 +144,7 @@ gulp.task('json', function() {
 
 
 // Watch
-gulp.task('watch', ['html', 'bundle', 'connect'], function () {
+gulp.task('watch', ['images', 'html', 'bundle', 'connect'], function () {
 
     // Watch .json files
     //gulp.watch('app/scripts/**/*.json', ['json']);
@@ -160,7 +160,7 @@ gulp.task('watch', ['html', 'bundle', 'connect'], function () {
     gulp.watch('app/scripts/**/*.coffee', ['scripts']);
 
     // gulp.watch('app/styles/**/*.css', ['styles']);
-    gulp.watch('app/styles/**/*.less', ['less']);
+    gulp.watch('app/stylesheets/**/*.less', ['less']);
 
     // Watch .jsx files
     // gulp.watch('app/scripts/**/*.jsx', ['jsx', 'scripts']);

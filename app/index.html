@@ -10,8 +10,8 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/main.css">
-        <script src="http://fb.me/react-0.9.0.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/main.css">
         
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -23,24 +23,23 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="container">
         
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            
-            <li>Modernizr</li>
-          </ul>
-        </div>
-        
+          <div class="jumbotron">
+              <h1>'Allo, 'Allo!</h1>
+              <p class="lead">Always a pleasure scaffolding your apps.</p>
+              <p>
+              <div data-react-class="FollowButton" data-react-props='{"followUserID":5881,"isFollow":false}'> </div>
+              </p>
+          </div>
+
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery"></script>
         <!-- endbower -->
         <!-- endbuild -->
         <script src="scripts/bundle.js"></script>
 
+      </div>
     </body>
 </html>
